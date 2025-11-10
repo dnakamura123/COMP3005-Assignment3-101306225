@@ -2,11 +2,9 @@ package app;
 
 import java.sql.Date;
 
-/**
- * Plain Java object representing one row in the 'students' table.
- */
+
 public class Student {
-    private Integer studentId;   // can be null before insert (auto-increment)
+    private Integer studentId;
     private String firstName;
     private String lastName;
     private String email;

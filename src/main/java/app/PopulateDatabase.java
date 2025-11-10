@@ -6,10 +6,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * Utility program to (re)create schema and seed initial data.
- * Run with: mvn -q exec:java -Dexec.mainClass="app.PopulateDatabase"
- */
 public class PopulateDatabase {
     public static void main(String[] args) {
         System.out.println("=== PopulateDatabase starting ===");

@@ -6,14 +6,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
-/**
- * Interactive console menu:
- * 0 = Exit
- * 1 = Add a new student
- * 2 = Update a student's email
- * 3 = Delete a student
- * 4 = View students
- */
 public class MainApp {
 
     public static void main(String[] args) {

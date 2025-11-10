@@ -1,16 +1,16 @@
 package app;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Options: performs CRUD on the 'students' table.
- * (Renamed from StudentDAO)
- */
+
 public class Options {
 
-    /** INSERT a new student; returns generated student_id. */
     public int addStudent(Student s) throws SQLException {
         String sql = """
             INSERT INTO public.students (first_name, last_name, email, enrollment_date)
@@ -36,7 +36,6 @@ public class Options {
         throw new SQLException("Insert failed; no ID returned.");
     }
 
-    /** SELECT all students. */
     public List<Student> getAllStudents() throws SQLException {
         String sql = """
             SELECT student_id, first_name, last_name, email, enrollment_date
@@ -61,7 +60,6 @@ public class Options {
         return result;
     }
 
-    /** UPDATE a student's email by id; returns rows updated. */
     public int updateStudentEmail(int studentId, String newEmail) throws SQLException {
         String sql = "UPDATE public.students SET email = ? WHERE student_id = ?";
         try (Connection conn = Database.getConnection();
@@ -72,7 +70,6 @@ public class Options {
         }
     }
 
-    /** DELETE a student by id; returns rows deleted. */
     public int deleteStudent(int studentId) throws SQLException {
         String sql = "DELETE FROM public.students WHERE student_id = ?";
         try (Connection conn = Database.getConnection();
@@ -82,7 +79,6 @@ public class Options {
         }
     }
 
-    /** Return a student by id, or null if not found. */
     public Student getStudentById(int id) throws SQLException {
         String sql = """
             SELECT student_id, first_name, last_name, email, enrollment_date

@@ -5,15 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-/**
- * Centralizes database connection creation.
- * Falls back to application.properties if env vars are not set.
- *
- * Env vars (recommended):
- *   DB_URL      e.g., jdbc:postgresql://localhost:5432/comp3005_a3
- *   DB_USER     e.g., postgres
- *   DB_PASSWORD e.g., your_password
- */
+
 public class Database {
 
     public static Connection getConnection() throws SQLException {
